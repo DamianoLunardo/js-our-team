@@ -1,4 +1,4 @@
-console.log("Hello World");
+//console.log("Hello World");
 
 const teamMembers = [
     {
@@ -36,9 +36,9 @@ const teamMembers = [
 //console.log(teamMembers);
 
 //for (let i = 0; i < teamMembers.length; i++) {
-    //console.log(teamMembers[i].nome_cognome);
-    //console.log(teamMembers[i].ruolo);
-    //console.log(teamMembers[i].immagine);
+//console.log(teamMembers[i].nome_cognome);
+//console.log(teamMembers[i].ruolo);
+//console.log(teamMembers[i].immagine);
 //};
 
 for (let i = 0; i < teamMembers.length; i++) {
@@ -53,23 +53,26 @@ for (let i = 0; i < teamMembers.length; i++) {
 };
 
 const membriDelTeam = document.getElementById('team-members')
+const cardContainer = document.createElement('div')
+
 
 for (let i = 0; i < teamMembers.length; i++) {
     const member = teamMembers[i]
     const memberDiv = document.createElement('div')
+    memberDiv.classList.add('card')
 
     const nomeCognome = document.createElement('h5')
     nomeCognome.textContent = member.nome_cognome
 
     const ruolo = document.createElement('p')
-    ruolo.textContent = member.ruolo 
-    
+    ruolo.textContent = member.ruolo
+
     const immagineProfilo = document.createElement('img')
-    immagineProfilo.src = member.immagine 
-   
+    immagineProfilo.src = member.immagine
+
     membriDelTeam.appendChild(memberDiv)
+    memberDiv.appendChild(immagineProfilo)
     memberDiv.appendChild(nomeCognome)
     memberDiv.appendChild(ruolo)
-    memberDiv.appendChild(immagineProfilo)
+};
 
-}
