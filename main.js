@@ -43,7 +43,29 @@ for (let i = 0; i < teamMembers.length; i++) {
 
 for (let i = 0; i < teamMembers.length; i++) {
     const infoTeam = teamMembers[i]
-    console.log(infoTeam)
+    //console.log(infoTeam)
     const fullInfo = `${infoTeam.nome_cognome} ${infoTeam.ruolo} ${infoTeam.immagine}`
     console.log(fullInfo)
 };
+
+const membriDelTeam = document.getElementById('team-members')
+
+for (let i = 0; i < teamMembers.length; i++) {
+    const member = teamMembers[i]
+    const memberDiv = document.createElement('div')
+
+    const nomeCognome = document.createElement('h5')
+    nomeCognome.textContent = member.nome_cognome
+
+    const professione = document.createElement('p')
+    professione.textContent = member.ruolo 
+    
+    const immagineProfilo = document.createElement('p')
+    immagineProfilo.textContent = member.immagine
+    
+    membriDelTeam.appendChild(memberDiv)
+    memberDiv.appendChild(nomeCognome)
+    memberDiv.appendChild(professione)
+    memberDiv.appendChild(immagineProfilo)
+    
+}
